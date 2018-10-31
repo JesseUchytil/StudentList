@@ -34,6 +34,7 @@ th{
             <th>Date of birth</th>
             <th>Gender</th>
             <th>Semesters Attended</th>
+            <th>Class year</th>
         </tr>
 		<c:forEach items="${all}" var="s">
 	        <tr>
@@ -41,7 +42,8 @@ th{
 	            <td>${s.lastname}</td>
 	            <td>${s.birthdate}</td>
 	            <td>${s.gender}</td>
-	            <td>${u.semestersattended}</td>
+	            <td>${s.semestersattended}</td>
+	            <td>${s.classyearid}</td>
 	        </tr>
 		</c:forEach>
     </table>

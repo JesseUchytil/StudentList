@@ -30,7 +30,11 @@
         </tr>
         <tr>
             <td>Semesters Attended</td>
-            <td>${u.semestersattended}</td>
+            <td>${s.semestersattended}</td>
+        </tr>
+        <tr>
+            <td>Class Year</td>
+            <td>${s.classyear}</td>
         </tr>
     </table>
 <a href = "viewAll.mvc">View all Users</a>

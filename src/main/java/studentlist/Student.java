@@ -17,7 +17,14 @@ public class Student {
 	private String birthdate;//made a string for simplicity.
 	private Gender gender;
 	private String semestersattended;
+	private int classyearid;
 
+	public int getClassyearid() {
+		return classyearid;
+	}
+	public void setClassyearid(int classyearid) {
+		this.classyearid = classyearid;
+	}
 	public int getId() {
 		return id;
 	}

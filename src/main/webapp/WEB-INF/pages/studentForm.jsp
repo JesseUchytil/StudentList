@@ -37,6 +37,10 @@
 	        <td><mvc:input path="semestersattended" id="semestersattended" /></td>
 	        <td><label id="semestersattendedlabel" style="color:red;"></label></td>
 	    </tr>
+	    <tr>
+	    	<td><mvc:label path="classyearid">Class year</mvc:label></td>
+	        <td><mvc:input path="classyearid" id="classyearid" /></td>
+	        <td><label id="classyearidlabel" style="color:red;"></label></td>
         <tr>
 	        <td colspan="2">
                 <input type="submit" value="Submit" id="submit" disabled />
@@ -57,21 +61,24 @@
 //	var genderlabel = document.getElementById('genderlabel');
 	var semestersattended = document.getElementById('semestersattended');
 	var semestersattendedlabel = document.getElementById('semestersattendedlabel');
+	var classyearid = document.getElementById('classyearid');
+	var classyearidlabel = document.getElementById('classyearidlabel');
 
-	if(firstname == null || lastname == null || birthdate == null || semestersattended == null){
+	if(firstname == null || lastname == null || birthdate == null || semestersattended == null || classyearid == null){
 		console.log("invalid objects");
 		if(firstname == null)console.log("firstname");
 		if(lastname == null)console.log("lastname");
 		if(birthdate == null)console.log("birthdate");
 //		if(gender == null)console.log("gender");
 		if(semestersattended == null)console.log("semestersattended");
+		if(classyearid == null)console.log("classyearid");
 	}else{
 		firstname.addEventListener("change", validate);
 		lastname.addEventListener("change", validate);
 		birthdate.addEventListener("change", validate);
 //		gender.addEventListener("change", validate);
 		semestersattended.addEventListener("change", validate);
-		
+		classyearid.addEventListener("change", validate);
 	}
 
 	firstnamelabel.innerHTML = "*";
@@ -79,12 +86,14 @@
 	birthdatelabel.innerHTML = "*";
 //	genderlabel.innerHTML = "*";
 	semestersattendedlabel.innerHTML = "*";
+	classyearidlabel.innerHTML = "*";
 
 	function validate(){
 		if(firstname.value == null || firstname.value.length < 2) firstnamelabel.innerHTML = "* Please enter a first name.";
 		if(lastname.value == null || lastname.value.length < 2) lastnamelabel.innerHTML = "* Please enter a last name.";
 		if(birthdate.value == null || birthdate.value.length < 6) birthdatelabel.innerHTML = "* Please enter a date of birth (MM/DD/YY).";
 		if(semestersattended.value == null || semestersattended.value.length < 1) semestersattendedlabel.innerHTML = "* Please enter how many semesters the student has attended.";
+		if(classyearid.value == null || classyearid.value.length != 4) classyearidlabel.innerHTML = "* Please enter a year (YYYY) that the student attended.";
 		if(firstname.value == null || firstname.value.length < 2 ||
 				lastname.value == null || lastname.value.length < 2 ||
 				birthdate.value == null || birthdate.value.length < 6 ||
@@ -95,7 +104,8 @@
 		if(!(firstname.value == null || firstname.value.length < 2) &&
 				!(lastname.value == null || lastname.value.length < 2) &&
 				!(birthdate.value == null || birthdate.value.length < 6) &&
-				!(semestersattended.value == null || semestersattended.value.length < 1)){
+				!(semestersattended.value == null || semestersattended.value.length < 1) &&
+				!(classyearid.value == null || classyearid.value.length != 4)){
 			document.getElementById("submit").disabled = false;
 			console.log("got here");
 		}
@@ -104,6 +114,7 @@
 		if(lastname.value.length > 1)lastnamelabel.innerHTML = "";
 		if(birthdate.value.length > 5)birthdatelabel.innerHTML = "";
 		if(semestersattended.value.length > 1)semestersattendedlabel.innerHTML = "";
+		if(classyearid.value.length == 4)classyearidlabel.innerHTML = "";
 	}
 	
 </script>

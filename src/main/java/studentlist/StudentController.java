@@ -23,10 +23,8 @@ public class StudentController {
 	@RequestMapping(value = "/form")
 	public ModelAndView user( ){
 		ModelAndView modelAndView = new ModelAndView( );
-		
 		modelAndView.setViewName("studentForm");
 		modelAndView.addObject("student", new Student( ));
-		
 		return modelAndView;
 	}
 	
@@ -59,6 +57,14 @@ public class StudentController {
 		ModelAndView modelAndView = new ModelAndView();
 		dao.removeAllStudents();
 		modelAndView.setViewName("deleteAll");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/classForm")
+	public ModelAndView classForm() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("classForm");
+		modelAndView.addObject("classyear", new Classyear( ));
 		return modelAndView;
 	}
 
