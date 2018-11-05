@@ -16,6 +16,37 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `studentregistry`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `studentregistry` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `studentregistry`;
+
+--
+-- Table structure for table `classyear`
+--
+
+DROP TABLE IF EXISTS `classyear`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `classyear` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `year` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `classyear`
+--
+
+LOCK TABLES `classyear` WRITE;
+/*!40000 ALTER TABLE `classyear` DISABLE KEYS */;
+/*!40000 ALTER TABLE `classyear` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `students`
 --
 
@@ -29,8 +60,9 @@ CREATE TABLE `students` (
   `birthdate` varchar(20) DEFAULT NULL,
   `gender` varchar(10) DEFAULT NULL,
   `semestersattended` int(11) DEFAULT NULL,
+  `classyearid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,4 +83,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-10-17 16:18:48
+-- Dump completed on 2018-11-05 17:16:49
