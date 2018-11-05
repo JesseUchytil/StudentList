@@ -18,6 +18,9 @@
 	
 	<p><a href="form.mvc">Add a new student</a></p>
 	<p><a href="viewAll.mvc">View currently enrolled students</a></p>
+	<p><a href="studentYearList.mvc">View currently enrolled students ordered by year</a></p>
+	<p><a href="classyearList.mvc">View all current class years</a></p>
 	<p><a href="deleteAll.mvc">Delete all records from database</a></p>
+	
 </body>
 </html>

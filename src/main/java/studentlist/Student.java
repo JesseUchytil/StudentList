@@ -17,12 +17,12 @@ public class Student {
 	private String birthdate;//made a string for simplicity.
 	private Gender gender;
 	private String semestersattended;
-	private int classyearid;
+	private String classyearid;
 
-	public int getClassyearid() {
+	public String getClassyearid() {
 		return classyearid;
 	}
-	public void setClassyearid(int classyearid) {
+	public void setClassyearid(String classyearid) {
 		this.classyearid = classyearid;
 	}
 	public int getId() {

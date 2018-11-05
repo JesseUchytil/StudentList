@@ -34,10 +34,10 @@
         </tr>
         <tr>
             <td>Class Year</td>
-            <td>${s.classyear}</td>
+            <td>${s.classyearid}</td>
         </tr>
     </table>
-<a href = "viewAll.mvc">View all Users</a>
+<a href = "viewAll.mvc">View all students</a>
 <a href = "menu.mvc">Return to main menu</a>
 <a href = "form.mvc">Add another student</a>
 </body>

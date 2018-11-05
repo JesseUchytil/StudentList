@@ -60,11 +60,21 @@ public class StudentController {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/classForm")
-	public ModelAndView classForm() {
+	@RequestMapping(value = "/studentYearList")
+	public ModelAndView studentYearList() {
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("classForm");
-		modelAndView.addObject("classyear", new Classyear( ));
+		List<Student> allStudents = dao.getAllStudentsByYear();
+		modelAndView.setViewName("viewStudentsByYear");
+		modelAndView.addObject("all", allStudents);
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/classyearList")
+	public ModelAndView classyearList() {
+		ModelAndView modelAndView = new ModelAndView();
+		List<Classyear> allClassyears = dao.getAllClassyear();
+		modelAndView.setViewName("viewAllClassyears");
+		modelAndView.addObject("all", allClassyears);
 		return modelAndView;
 	}
 
